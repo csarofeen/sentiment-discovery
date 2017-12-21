@@ -1,0 +1,6 @@
+numpy
+pytorch>=0.3.0
+pandas
+scikit-learn
+matplotlib
+unidecode
