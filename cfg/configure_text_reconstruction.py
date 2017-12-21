@@ -108,7 +108,7 @@ def script_config(parser):
                         help='total number of training iterations to run')
     parser.add_argument('-lr', type=float, default=0.0005,
                         help="""Starting learning rate.""")
-    parser.add_argument('--optimizer_type', default='SGD',
+    parser.add_argument('-optimizer_type', default='SGD',
                         help='Class name of optimizer to use as listed in torch.optim class \
                          (ie. SGD, RMSProp, Adam)')
     parser.add_argument('-lr_scheduler', default='ExponentialLR',

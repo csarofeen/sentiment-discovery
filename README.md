@@ -90,7 +90,7 @@ Train a recurrent language model (mlstm/lstm) and save it to the `<model_dir>/` 
 python3 text_reconstruction.py -experiment_dir ./experiments -experiment_name mlstm -model_dir model -cuda \
 -embed_size 64 -rnn_size 4096 -layers 1 -rnn_type mlstm -dropout 0 -weight_norm -lstm_only -fuse_lstm \
 -train data/amazon/reviews.json -loose_json -text_key reviewText -lazy -data_set_type unsupervised \
--batch_size 32 -seq_length 256 -lr 0.000125 --optimizer_type=Adam -lr_scheduler LinearLR -epochs 1 \
+-batch_size 32 -seq_length 256 -lr 0.000125 -optimizer_type Adam -lr_scheduler LinearLR -epochs 1 \
 -num_shards 1002 -split 1000,1,1 -eval_batch_size 1 -eval_seq_length -1 -persist_state 1
 -save_epochs 1 -save_iters 5000 
 ```
@@ -235,7 +235,7 @@ For a list of default values for all flags look at `./cfg/configure_visualizatio
 python3 text_reconstruction.py -experiment_dir ./experiments -experiment_name mlstm -model_dir model \
 -embed_size 64 -rnn_size 4096 -layers 1 -rnn_type mlstm -dropout 0 -weight_norm -lstm_only -fuse_lstm \
 -train data/amazon/reviews.json -loose_json -text_key reviewText -lazy -data_set_type unsupervised \
--batch_size 32 -seq_length 256 -lr 0.000125 --optimizer_type=Adam -lr_scheduler LinearLR -epochs 1 \
+-batch_size 32 -seq_length 256 -lr 0.000125 -optimizer_type=Adam -lr_scheduler LinearLR -epochs 1 \
 -num_shards 1002 -split 1000,1,1 -eval_batch_size 1 -eval_seq_length -1 -persist_state 1
 -save_epochs 1 -save_iters 5000 -cuda -num_gpus 2 -distributed
 ```
